@@ -1,1 +1,4 @@
-python -c 'import random;import string; print("".join(random.SystemRandom().choice(string.digits + string.ascii_letters + string.punctuation) for _ in range(50)))'
+from django.core.management.utils import get_random_secret_key
+
+key = get_random_secret_key()
+print('NEW SECRET_KEY IS\n' + key)
