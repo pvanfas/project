@@ -8,7 +8,8 @@ import json
 
 def dashboard(request):
     context = {
-        "is_dashboard" : True
+        'is_dashboard' : True,
+        'is_need_chart' : True
     }
     return render(request, 'app/index.html',context)
 
@@ -16,11 +17,13 @@ def dashboard(request):
 def buttons(request):
     return render(request,'app/pages/buttons.html',)
 def elements(request):
+    context = {'is_need_file_upload' : True}
     return render(request,'app/pages/elements.html',)
 def table(request):
     return render(request,'app/pages/table.html',)
 def chart(request):
-    return render(request,'app/pages/chart.html',)
+    context = {'is_need_chart' : True}
+    return render(request,'app/pages/chart.html',context)
 def icons(request):
     return render(request,'app/pages/icons.html',)
 def typography(request):

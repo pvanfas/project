@@ -12,7 +12,7 @@ SOCIAL_CHOICES = (
 
 class Social(models.Model):
 	order = models.IntegerField(unique=True)
-	media = models.CharField(max_length=15,choices=SOCIAL_CHOICES)
+	media = models.CharField(max_length=100,choices=SOCIAL_CHOICES)
 	link = models.CharField(max_length=150)
 
 	class Meta:

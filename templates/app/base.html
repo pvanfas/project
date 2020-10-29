@@ -2,21 +2,12 @@
 <html lang="en">
     <head>
         {% load static %}
-        <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Admin</title>
-        <!-- plugins:css -->
         <link rel="stylesheet" href="{% static 'app/vendors/mdi/css/materialdesignicons.min.css' %}" />
         <link rel="stylesheet" href="{% static 'app/vendors/css/vendor.bundle.base.css' %}" />
-        <!-- endinject -->
-        <!-- Plugin css for this page -->
-        <!-- End plugin css for this page -->
-        <!-- inject:css -->
-        <!-- endinject -->
-        <!-- Layout styles -->
         <link rel="stylesheet" href="{% static 'app/css/style.css' %}" />
-        <!-- End layout styles -->
         <link rel="shortcut icon" href="{% static 'app/images/favicon.ico' %}" />
     </head>
     <body>
@@ -36,22 +27,17 @@
             <!-- page-body-wrapper ends -->
         </div>
         <!-- container-scroller -->
-        <!-- plugins:js -->
+
         <script src="{% static 'app/vendors/js/vendor.bundle.base.js' %}"></script>
-        <!-- endinject -->
-        <!-- Plugin js for this page -->
-        <script src="{% static 'app/vendors/chart.js/Chart.min.js' %}"></script>
-        <!-- End plugin js for this page -->
-        <!-- inject:js -->
+        {% if is_need_chart %}<script src="{% static 'app/vendors/chart.js/Chart.min.js' %}"></script>{% endif %}
         <script src="{% static 'app/js/off-canvas.js' %}"></script>
         <script src="{% static 'app/js/hoverable-collapse.js' %}"></script>
         <script src="{% static 'app/js/misc.js' %}"></script>
-        <!-- endinject -->
         {% if is_dashboard %}
-        <!-- Custom js for this page -->
         <script src="{% static 'app/js/dashboard.js' %}"></script>
         <script src="{% static 'app/js/todolist.js' %}"></script>
-        <!-- End custom js for this page -->
         {% endif %}
+        {% if is_need_chart %}<script src="{% static 'app/js/chart.js' %}"></script>{% endif %}
+        {% if is_need_file_upload %}<script src="{% static 'app/js/file-upload.js' %}"></script>{% endif %}
     </body>
 </html>
